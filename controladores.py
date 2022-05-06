@@ -1,9 +1,11 @@
 import sqlite3
 
+
 def connect_db(): #conector
     con = sqlite3.connect('db/biblioteca.db')
     cur = con.cursor()
     return con, cur
+
 
 def add_livro(livro, autor):
     try:
@@ -17,6 +19,7 @@ def add_livro(livro, autor):
     finally:
         cur.close()
         con.close()
+
 
 def remover_livro(id):
     try:
