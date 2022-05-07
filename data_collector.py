@@ -9,10 +9,10 @@ try:
     sql = "INSERT INTO livros('nome', 'autor') VALUES(?, ?)"
     for index, row in df.iterrows():
         cur.execute(sql, (row.BookTitle, row.BookAuthor))
+    con.commit()
     print('Sucesso na inserção dos dados')
 except Exception as error:
     print(error)
 finally:
-    con.commit()
     cur.close()
     con.close()
